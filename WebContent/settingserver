@@ -1,0 +1,9 @@
+<Context docBase="Shopping" path="/" reloadable="true"
+					source="org.eclipse.jst.jee.server:Shopping">
+					<Resource name="jdbc/shopping" auth="Container"
+						type="javax.sql.DataSource" username="root"
+						password="" driverClassName="com.mysql.jdbc.Driver"
+						url="jdbc:mysql://localhost:3306/shopping"
+						maxActive="15"
+						maxIdle="3" />
+				</Context>

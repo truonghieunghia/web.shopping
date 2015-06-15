@@ -24,8 +24,13 @@ public class IndexController extends ControllerCommon{
 		connect.executeQuery("select * from Account");
 		connect.close();
 		ResultData data = connect.getResultData();
-		Account obj = data.getDataRow(0,Account.class);
-		System.out.println(obj.toString());
+		if (data != null){
+			Account obj = data.getDataRow(0,Account.class);
+			System.out.println(obj.toString());
+		}else{			
+			System.out.println("no connect");
+		}
+		
 	}
 
 	@Override

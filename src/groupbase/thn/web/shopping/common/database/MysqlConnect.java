@@ -14,6 +14,7 @@ public class MysqlConnect {
 	private Statement mStatement = null;
 	private ResultSet mResultSet = null;
 	private ResultData mResultData = null;
+
 	public void open() {
 		try {
 			InitialContext ctx = new InitialContext();
@@ -44,15 +45,18 @@ public class MysqlConnect {
 
 	public void executeQuery(String sql) {
 		try {
-			mStatement = mConnection.createStatement();
-			mResultSet = mStatement.executeQuery(sql);
-			mResultData = new ResultData(mResultSet);
+			if (mConnection != null) {
+				mStatement = mConnection.createStatement();
+				mResultSet = mStatement.executeQuery(sql);
+				mResultData = new ResultData(mResultSet);
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
 	}
-	public ResultData getResultData(){
+
+	public ResultData getResultData() {
 		return mResultData;
 	}
 }
