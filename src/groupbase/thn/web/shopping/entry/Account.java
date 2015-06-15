@@ -1,4 +1,4 @@
-package groupbase.thn.web.shopping.db;
+package groupbase.thn.web.shopping.entry;
 
 import groupbase.thn.web.shopping.common.database.ColumnNameAnnotation;
 import groupbase.thn.web.shopping.common.database.EntryAnnotation;

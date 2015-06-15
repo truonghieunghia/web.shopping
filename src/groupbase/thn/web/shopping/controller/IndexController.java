@@ -5,7 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import groupbase.thn.web.shopping.common.ControllerCommon;
 import groupbase.thn.web.shopping.common.database.MysqlConnect;
 import groupbase.thn.web.shopping.common.database.ResultData;
-import groupbase.thn.web.shopping.db.Account;
+import groupbase.thn.web.shopping.entry.Account;
 
 @WebServlet(loadOnStartup = 1 ,urlPatterns = {"/index.html"})
 public class IndexController extends ControllerCommon{
