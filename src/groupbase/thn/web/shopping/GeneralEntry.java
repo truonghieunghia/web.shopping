@@ -86,6 +86,8 @@ public class GeneralEntry {
 					writer.println("\t@ColumnNameAnnotation(ColumnName=\""
 							+ Field + "\",FieldType=" + Type + ")");
 					writer.println("\tpublic "+type +" "+ Field + ";");
+					writer.println("\tpublic static String col_"+Field+" = \""+Field+"\";");
+					
 				}
 				writer.println();
 				writer.println("}");

@@ -8,7 +8,9 @@ public class Location {
 
 	@ColumnNameAnnotation(ColumnName="LocationID",FieldType=String.class)
 	public String LocationID;
+	public static String col_LocationID = "LocationID";
 	@ColumnNameAnnotation(ColumnName="LocationName",FieldType=String.class)
 	public String LocationName;
+	public static String col_LocationName = "LocationName";
 
 }
