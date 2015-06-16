@@ -140,6 +140,52 @@ public abstract class ControllerCommon extends HttpServlet {
 		}
 	}
 
+	protected void upload(String pathFolder, Part part, String fileName) {
+		try {
+			final String path = getPathRoot() + pathFolder.trim();
+			final Part filePart = part;
+			final String tempfile = getFileName(filePart);
+			if (fileName == null | fileName.trim().length() == 0) {
+				fileName = tempfile;
+			} else {
+
+				fileName = fileName
+						+ tempfile.substring(tempfile.lastIndexOf("."),
+								tempfile.length());
+			}
+			OutputStream out = null;
+			InputStream filecontent = null;
+			out = new FileOutputStream(new File(path + File.separator
+					+ fileName));
+			filecontent = filePart.getInputStream();
+
+			int read = 0;
+			final byte[] bytes = new byte[1024];
+
+			while ((read = filecontent.read(bytes)) != -1) {
+				out.write(bytes, 0, read);
+			}
+			if (out != null) {
+				out.close();
+			}
+			if (filecontent != null) {
+				filecontent.close();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	protected ArrayList<Part> getPart(String partName) {
+		try {
+			return new ArrayList<Part>(mRequest.getParts());
+		} catch (IllegalStateException | IOException | ServletException e) {
+			// TODO Auto-generated catch block
+			return null;
+		}
+	}
+
 	protected void outString(String text) {
 		mPrintWriter.println(text);
 	}
