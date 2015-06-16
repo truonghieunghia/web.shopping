@@ -1,13 +1,12 @@
 package groupbase.thn.web.shopping.controller;
 
+import groupbase.thn.web.shopping.common.ControllerCommon;
+
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 
-import groupbase.thn.web.shopping.common.ControllerCommon;
-import groupbase.thn.web.shopping.common.database.MysqlConnect;
-import groupbase.thn.web.shopping.common.database.ResultData;
-import groupbase.thn.web.shopping.entry.Account;
-
 @WebServlet(loadOnStartup = 1 ,urlPatterns = {"/index.html"})
+@MultipartConfig
 public class IndexController extends ControllerCommon{
 
 	/**
@@ -19,7 +18,7 @@ public class IndexController extends ControllerCommon{
 	protected void doGet() {
 		
 		loadView("indexView");
-		MysqlConnect connect = new MysqlConnect();
+		/*MysqlConnect connect = new MysqlConnect();
 		connect.open();
 		connect.executeQuery("select * from Account");
 		connect.close();
@@ -29,14 +28,15 @@ public class IndexController extends ControllerCommon{
 			System.out.println(obj.toString());
 		}else{			
 			System.out.println("no connect");
-		}
+		}*/
 		
 	}
 
 	@Override
 	protected void doPost(){
 		// TODO Auto-generated method stub
-		
+		upload("/upload", "file", "test");
 	}
+	
 
 }
