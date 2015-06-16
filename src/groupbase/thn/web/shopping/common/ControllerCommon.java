@@ -180,7 +180,7 @@ public abstract class ControllerCommon extends HttpServlet {
 	protected ArrayList<Part> getPart(String partName) {
 		try {
 			return new ArrayList<Part>(mRequest.getParts());
-		} catch (IllegalStateException | IOException | ServletException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			return null;
 		}
