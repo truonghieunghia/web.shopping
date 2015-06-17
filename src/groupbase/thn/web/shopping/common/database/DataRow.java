@@ -31,11 +31,11 @@ public class DataRow {
 		return mListData.size();
 	}
 
-	public <T> T getObjec(Class<T> object) {
+	public <T> T getObjec(Class<T> entry) {
 		try {
 			List<Field> fields = new ArrayList<Field>();
-			fields.addAll(Arrays.asList(object.getDeclaredFields()));
-			Object result = object.newInstance();
+			fields.addAll(Arrays.asList(entry.getDeclaredFields()));
+			Object result = entry.newInstance();
 			for (Field field : fields) {
 				field.setAccessible(true);
 				ColumnNameAnnotation columnNameAnnotation = field
@@ -50,7 +50,7 @@ public class DataRow {
 					}
 				}
 			}
-			return object.cast(result);
+			return entry.cast(result);
 		} catch (Exception e) {
 			return null;
 		}

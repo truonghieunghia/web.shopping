@@ -14,4 +14,8 @@ public @interface ColumnNameAnnotation {
     public Class<?> FieldType() default Object.class;
     
     public int MaxLength() default 0;
+    
+    public boolean isPrimary() default false;
+    
+    public boolean isAuto_increment() default false;
 }

@@ -1,6 +1,11 @@
 package groupbase.thn.web.shopping.controller;
 
+import java.util.ArrayList;
+
 import groupbase.thn.web.shopping.common.ControllerCommon;
+import groupbase.thn.web.shopping.common.database.MysqlConnect;
+import groupbase.thn.web.shopping.common.database.ParameterSql;
+import groupbase.thn.web.shopping.entry.AccountType;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -18,24 +23,26 @@ public class IndexController extends ControllerCommon{
 	protected void doGet() {
 		
 		loadView("indexView");
-		/*MysqlConnect connect = new MysqlConnect();
-		connect.open();
-		connect.executeQuery("select * from Account");
-		connect.close();
-		ResultData data = connect.getResultData();
-		if (data != null){
-			Account obj = data.getDataRow(0,Account.class);
-			System.out.println(obj.toString());
-		}else{			
-			System.out.println("no connect");
-		}*/
+		
 		
 	}
 
 	@Override
 	protected void doPost(){
 		// TODO Auto-generated method stub
-		upload("/upload", "file", "test");
+//		upload("/upload", "file", "test");
+		MysqlConnect connect = new MysqlConnect();
+		AccountType obj = new AccountType();
+		obj.setAccountName("Admin");
+		obj.setAccountTypeID(1);
+		int result = -1;
+		connect.open();
+		ArrayList<ParameterSql> parameters = new ArrayList<ParameterSql>();
+		parameters.add(new ParameterSql(Integer.class, 1));
+//		result=connect.insert(AccountType.class, obj);
+		result=connect.delete(AccountType.class, AccountType.AccountTypeID_Field +"=?", parameters);
+		connect.close();
+		System.out.println("no connect"+result);
 	}
 	
 

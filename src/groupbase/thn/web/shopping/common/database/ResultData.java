@@ -51,8 +51,14 @@ public class ResultData {
 	public DataRow getDataRow(int rowIndex) {
 		return mListData.get(rowIndex);
 	}
-	public <T> T getDataRow(int rowIndex,Class<T> object) {
-		return mListData.get(rowIndex).getObjec(object);
+	public <T> T getDataRow(int rowIndex,Class<T> entry) {
+		return mListData.get(rowIndex).getObjec(entry);
 	}
-
+	public <T> ArrayList<T> getAllDataRow(Class<T> entry) {
+		ArrayList<T> result = new ArrayList<T>();
+		for(int i = 0 ; i < mRowCount; i++){
+			result.add(getDataRow(i,entry));
+		}
+		return result;
+	}
 }
