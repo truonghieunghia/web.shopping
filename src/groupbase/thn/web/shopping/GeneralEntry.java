@@ -70,6 +70,14 @@ public class GeneralEntry {
 				for (Object obj : listcolumn) {
 					@SuppressWarnings("unchecked")
 					HashMap<String, Object> columnDetail = (HashMap<String, Object>) obj;
+					String Field = columnDetail.get("Field").toString();		
+					writer.println("\tpublic static String "+Field+"_Field = \""+Field+"\";");
+					
+				}
+				writer.println();
+				for (Object obj : listcolumn) {
+					@SuppressWarnings("unchecked")
+					HashMap<String, Object> columnDetail = (HashMap<String, Object>) obj;
 					String Field = columnDetail.get("Field").toString();
 					String Type = columnDetail.get("Type").toString();
 					String type = "String";
@@ -83,10 +91,9 @@ public class GeneralEntry {
 						Type = "String.class";
 						type = "String";
 					}
-					writer.println("\t@ColumnNameAnnotation(ColumnName=\""
-							+ Field + "\",FieldType=" + Type + ")");
-					writer.println("\tpublic "+type +" "+ Field + ";");
-					writer.println("\tpublic static String col_"+Field+" = \""+Field+"\";");
+					writer.println("\t@ColumnNameAnnotation(ColumnName = \""
+							+ Field + "\", FieldType = " + Type + ")");
+					writer.println("\tpublic "+type +" "+ Field + ";");					
 					
 				}
 				writer.println();

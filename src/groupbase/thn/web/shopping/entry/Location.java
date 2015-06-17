@@ -6,11 +6,12 @@ import groupbase.thn.web.shopping.common.database.EntryAnnotation;
 @EntryAnnotation(TableName = "Location")
 public class Location {
 
-	@ColumnNameAnnotation(ColumnName="LocationID",FieldType=String.class)
+	public static String LocationID_Field = "LocationID";
+	public static String LocationName_Field = "LocationName";
+
+	@ColumnNameAnnotation(ColumnName = "LocationID", FieldType = String.class)
 	public String LocationID;
-	public static String col_LocationID = "LocationID";
-	@ColumnNameAnnotation(ColumnName="LocationName",FieldType=String.class)
+	@ColumnNameAnnotation(ColumnName = "LocationName", FieldType = String.class)
 	public String LocationName;
-	public static String col_LocationName = "LocationName";
 
 }

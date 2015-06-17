@@ -6,14 +6,15 @@ import groupbase.thn.web.shopping.common.database.EntryAnnotation;
 @EntryAnnotation(TableName = "ProductsType")
 public class ProductsType {
 
-	@ColumnNameAnnotation(ColumnName="ProductsTypeID",FieldType=Integer.class)
+	public static String ProductsTypeID_Field = "ProductsTypeID";
+	public static String ProductsTypeName_Field = "ProductsTypeName";
+	public static String CategoriesID_Field = "CategoriesID";
+
+	@ColumnNameAnnotation(ColumnName = "ProductsTypeID", FieldType = Integer.class)
 	public int ProductsTypeID;
-	public static String col_ProductsTypeID = "ProductsTypeID";
-	@ColumnNameAnnotation(ColumnName="ProductsTypeName",FieldType=String.class)
+	@ColumnNameAnnotation(ColumnName = "ProductsTypeName", FieldType = String.class)
 	public String ProductsTypeName;
-	public static String col_ProductsTypeName = "ProductsTypeName";
-	@ColumnNameAnnotation(ColumnName="CategoriesID",FieldType=Integer.class)
+	@ColumnNameAnnotation(ColumnName = "CategoriesID", FieldType = Integer.class)
 	public int CategoriesID;
-	public static String col_CategoriesID = "CategoriesID";
 
 }
