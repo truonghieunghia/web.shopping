@@ -1,3 +1,5 @@
 /build/
 .tern-project
 .classpath
+.DS_Store
+.settings
