@@ -1,9 +1,12 @@
 package groupbase.thn.web.shopping.common;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
@@ -30,7 +33,7 @@ public abstract class ControllerCommon extends HttpServlet {
 	protected HttpServletRequest mRequest;
 	protected HttpServletResponse mResponse;
 	protected PrintWriter mPrintWriter;
-	protected String mContentType = "text/html";
+	protected String mContentType = "text/plain; charset=utf-8";
 
 	public String getPathRoot() {
 		return mRequest.getServletContext().getRealPath("");
@@ -229,6 +232,28 @@ public abstract class ControllerCommon extends HttpServlet {
 		return null;
 	}
 
+	public String outTextFromFile(String pathFile){
+		try {
+		      FileInputStream fis =
+		        new FileInputStream(getPathRoot()+pathFile);
+		      InputStreamReader isr = new InputStreamReader(fis);
+		      BufferedReader reader = new BufferedReader(isr);
+		      String line = null;
+		      String result ="";
+		      while ((line = reader.readLine()) != null) {
+		    	  result = result+line; 
+		      }
+		      reader.close();
+		      fis.close();
+		      isr.close();
+		      return result;
+		    }
+		    catch (Exception e) {
+		      e.printStackTrace();
+		      return "";
+		    }
+		
+	}
 	protected abstract void doGet();
 
 	protected abstract void doPost();

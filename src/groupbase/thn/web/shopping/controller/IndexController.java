@@ -31,7 +31,7 @@ public class IndexController extends ControllerCommon{
 	protected void doPost(){
 		// TODO Auto-generated method stub
 //		upload("/upload", "file", "test");
-		MysqlConnect connect = new MysqlConnect();
+		/*MysqlConnect connect = new MysqlConnect();
 		AccountType obj = new AccountType();
 		obj.setAccountName("Admin");
 		obj.setAccountTypeID(1);
@@ -42,7 +42,8 @@ public class IndexController extends ControllerCommon{
 //		result=connect.insert(AccountType.class, obj);
 		result=connect.delete(AccountType.class, AccountType.AccountTypeID_Field +"=?", parameters);
 		connect.close();
-		System.out.println("no connect"+result);
+		System.out.println("no connect"+result);*/
+		outString(outTextFromFile("/errorView.jsp"));
 	}
 	
 
