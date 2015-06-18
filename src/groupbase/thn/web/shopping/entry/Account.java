@@ -23,6 +23,8 @@ public class Account implements Serializable {
 	public static String LocationID_Field = "LocationID";
 	public static String LocationName_Field = "LocationName";
 	public static String Image_Field = "Image";
+	public static String GenderID_Field = "GenderID";
+	public static String GenderName_Field = "GenderName";
 
 	@ColumnNameAnnotation(ColumnName = "AccountID", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
 	public int AccountID;
@@ -65,6 +67,12 @@ public class Account implements Serializable {
 
 	@ColumnNameAnnotation(ColumnName = "Image", FieldType = String.class, MaxLength = 200)
 	public String Image;
+
+	@ColumnNameAnnotation(ColumnName = "GenderID", FieldType = Integer.class, MaxLength = 11)
+	public int GenderID;
+
+	@ColumnNameAnnotation(ColumnName = "GenderName", FieldType = String.class, MaxLength = 20)
+	public String GenderName;
 
 	public int getAccountID() {
 		return AccountID;
@@ -176,6 +184,22 @@ public class Account implements Serializable {
 
 	public void setImage(String image) {
 		Image = image;
+	}
+
+	public int getGenderID() {
+		return GenderID;
+	}
+
+	public void setGenderID(int genderID) {
+		GenderID = genderID;
+	}
+
+	public String getGenderName() {
+		return GenderName;
+	}
+
+	public void setGenderName(String genderName) {
+		GenderName = genderName;
 	}
 
 }

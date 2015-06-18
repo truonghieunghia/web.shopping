@@ -13,6 +13,6 @@
 		<input type="text" value="/tmp" name="destination" /> </br> <input
 			type="submit" value="Upload" name="upload" id="upload" />
 	</form>
-	<a href="/register">Trương hiếu nghĩa </a>
+	<a href="/register.html">Register </a>
 </body>
 </html>
