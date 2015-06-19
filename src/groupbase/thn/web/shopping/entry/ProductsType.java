@@ -22,28 +22,4 @@ public class ProductsType implements Serializable {
 	@ColumnNameAnnotation(ColumnName = "CategoriesID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
 	public int CategoriesID;
 
-	public int getProductsTypeID() {
-		return ProductsTypeID;
-	}
-
-	public void setProductsTypeID(int productsTypeID) {
-		ProductsTypeID = productsTypeID;
-	}
-
-	public String getProductsTypeName() {
-		return ProductsTypeName;
-	}
-
-	public void setProductsTypeName(String productsTypeName) {
-		ProductsTypeName = productsTypeName;
-	}
-
-	public int getCategoriesID() {
-		return CategoriesID;
-	}
-
-	public void setCategoriesID(int categoriesID) {
-		CategoriesID = categoriesID;
-	}
-
 }

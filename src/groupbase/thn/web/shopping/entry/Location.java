@@ -18,20 +18,4 @@ public class Location implements Serializable {
 	@ColumnNameAnnotation(ColumnName = "LocationName", FieldType = String.class, MaxLength = 100)
 	public String LocationName;
 
-	public String getLocationID() {
-		return LocationID;
-	}
-
-	public void setLocationID(String locationID) {
-		LocationID = locationID;
-	}
-
-	public String getLocationName() {
-		return LocationName;
-	}
-
-	public void setLocationName(String locationName) {
-		LocationName = locationName;
-	}
-
 }

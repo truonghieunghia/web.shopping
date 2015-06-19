@@ -18,20 +18,4 @@ public class Categories implements Serializable {
 	@ColumnNameAnnotation(ColumnName = "CategoriesName", FieldType = String.class, MaxLength = 100)
 	public String CategoriesName;
 
-	public int getCategoriesID() {
-		return CategoriesID;
-	}
-
-	public void setCategoriesID(int categoriesID) {
-		CategoriesID = categoriesID;
-	}
-
-	public String getCategoriesName() {
-		return CategoriesName;
-	}
-
-	public void setCategoriesName(String categoriesName) {
-		CategoriesName = categoriesName;
-	}
-
 }

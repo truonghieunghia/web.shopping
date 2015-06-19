@@ -265,7 +265,7 @@ public class MysqlConnect {
 		} catch (Exception e) {
 			select = "*";
 		}
-		if (select.equals("*")) {
+		if (!select.equals("*")) {
 			select = select.substring(0, select.trim().length() - 1);
 		}
 		if (where != null && where.trim().length() > 0) {

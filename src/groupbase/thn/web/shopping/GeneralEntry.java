@@ -23,6 +23,8 @@ public class GeneralEntry {
 		// TODO Auto-generated method stub
 		String Path = System.getProperty("user.dir")
 				+ "/src/groupbase/thn/web/shopping/entry/";
+		String Pathjson = System.getProperty("user.dir")
+				+ "/src/groupbase/thn/web/shopping/api/result/json/";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -54,6 +56,20 @@ public class GeneralEntry {
 			statement.close();
 			connect.close();
 			//
+			for (String table : listTable) {
+				PrintWriter writer = new PrintWriter(Pathjson + table + "EntryJson.java");
+				writer.println("package groupbase.thn.web.shopping.api.result.json;");
+				writer.println();
+				writer.println("import java.util.ArrayList;");
+				writer.println();
+				writer.println("import groupbase.thn.web.shopping.entry."+table+";");
+				writer.println();
+				writer.println("public class " + table
+						+ "EntryJson {");
+				writer.println("\tpublic ArrayList<"+table+"> "+table.toLowerCase()+"_list;");
+				writer.println("}");
+				writer.close();
+			}
 			for (String table : listTable) {
 				PrintWriter writer = new PrintWriter(Path + table + ".java");
 				writer.println("package groupbase.thn.web.shopping.entry;");
@@ -132,7 +148,7 @@ public class GeneralEntry {
 
 				}
 
-				for (Object obj : listcolumn) {
+				/*for (Object obj : listcolumn) {
 					@SuppressWarnings("unchecked")
 					HashMap<String, Object> columnDetail = (HashMap<String, Object>) obj;
 					String Field = columnDetail.get("Field").toString();
@@ -161,7 +177,7 @@ public class GeneralEntry {
 					writer.println("\t\t" + Field + " = " + setField + ";");
 					writer.println("\t}");
 					writer.println();
-				}
+				}*/
 				writer.println("}");
 				writer.close();
 			}

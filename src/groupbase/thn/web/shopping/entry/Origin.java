@@ -18,20 +18,4 @@ public class Origin implements Serializable {
 	@ColumnNameAnnotation(ColumnName = "OriginName", FieldType = String.class, MaxLength = 100)
 	public String OriginName;
 
-	public String getOriginID() {
-		return OriginID;
-	}
-
-	public void setOriginID(String originID) {
-		OriginID = originID;
-	}
-
-	public String getOriginName() {
-		return OriginName;
-	}
-
-	public void setOriginName(String originName) {
-		OriginName = originName;
-	}
-
 }
