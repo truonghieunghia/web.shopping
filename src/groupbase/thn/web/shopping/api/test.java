@@ -4,8 +4,6 @@ import groupbase.thn.web.shopping.api.result.json.OriginEntryJson;
 import groupbase.thn.web.shopping.common.database.MysqlConnect;
 import groupbase.thn.web.shopping.entry.Origin;
 
-import java.util.ArrayList;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -21,10 +19,9 @@ public class test {
 	public String testws(){
 		MysqlConnect connect = new MysqlConnect();
 		connect.open();
-		ArrayList<Origin> genders = connect.executeQueryEntry(Origin.class, null);
-		connect.close();
 		OriginEntryJson resultJson = new OriginEntryJson();
-		resultJson.origin_list = genders;
+		resultJson.origin_list  = connect.executeQueryEntry(Origin.class, null);
+		connect.close();
 		String json = new Gson().toJson(resultJson);
 		return json;
 	}

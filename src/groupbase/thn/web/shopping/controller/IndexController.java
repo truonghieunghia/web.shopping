@@ -1,11 +1,7 @@
 package groupbase.thn.web.shopping.controller;
 
-import java.util.ArrayList;
 
 import groupbase.thn.web.shopping.common.ControllerCommon;
-import groupbase.thn.web.shopping.common.database.MysqlConnect;
-import groupbase.thn.web.shopping.common.database.ParameterSql;
-import groupbase.thn.web.shopping.entry.AccountType;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;

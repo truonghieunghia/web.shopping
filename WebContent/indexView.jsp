@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="test" uri="/WEB-INF/taglib/message.tld"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,5 +15,6 @@
 			type="submit" value="Upload" name="upload" id="upload" />
 	</form>
 	<a href="/register.html">Register </a>
+	<test:MessageError message="please input" required="true"/>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Error Message Requires</short-name>
+	<tag>
+		<name>MessageError</name>
+		<tag-class>groupbase.thn.web.shopping.taglib.RequiredMessage
+		</tag-class>
+		<attribute>
+			<name>message</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>required</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>

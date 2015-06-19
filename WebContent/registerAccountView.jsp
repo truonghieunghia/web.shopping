@@ -8,13 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body >
+
 	<div id="mainview"
 		style="background: #000000; width: 100%; height: 100%;" align="center">
 		<div
-			style=" display:inline-block;width: auto;clear: both; background-color: red; border: 2px solid; border-radius: 5px; color: #CCC;">
+			style=" display:inline-block;width: auto;clear: both; background-color: white; border: 2px solid; border-radius: 5px; color: #CCC;">
 			<form action="">
 			<div style="text-align: left;margin: 10px 0px  0px 10px">label</div>
-			<input type="text" style="margin:0px 10px 10px 10px;border-radius: 5px"/>
+			<input type="text" style="margin:0px 0px 10px 10px;border-radius: 5px"/><div style="color: red;float: right; text-align: right;">*</div>
 			</form>
 		</div>
 	</div>
