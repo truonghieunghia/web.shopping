@@ -7,15 +7,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body >
+<body>
 
-	<div id="mainview"
-		style="background: #000000; width: 100%; height: 100%;" align="center">
-		<div
-			style=" display:inline-block;width: auto;clear: both; background-color: white; border: 2px solid; border-radius: 5px; color: #CCC;">
+	<div id="mainview">
+		<div id="content">
 			<form action="">
-			<div style="text-align: left;margin: 10px 0px  0px 10px">label</div>
-			<input type="text" style="margin:0px 0px 10px 10px;border-radius: 5px"/><div style="color: red;float: right; text-align: right;">*</div>
+				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
+				<input type="text"
+					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
+				<div style="color: red; float: right; text-align: right;">*</div>
+				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
+				<input type="text"
+					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
+				<div style="color: red; float: right; text-align: right;">*</div>
+				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
+				<input type="text"
+					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
+				<div style="color: red; float: right; text-align: right;">*</div>
+				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
+				<input type="text"
+					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
+				<div style="color: red; float: right; text-align: right;">*</div>
+				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
+				<input type="text"
+					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
+				<div style="color: red; float: right; text-align: right;">*</div>
+				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
+				<input type="text"
+					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
+				<div style="color: red; float: right; text-align: right;">*</div>
 			</form>
 		</div>
 	</div>
