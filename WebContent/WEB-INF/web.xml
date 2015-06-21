@@ -25,4 +25,8 @@
 		<error-code>404</error-code>
 		<location>/error.html</location>
 	</error-page>
+	<welcome-file-list>
+		<welcome-file>test.html</welcome-file>
+		
+	</welcome-file-list>
 </web-app>

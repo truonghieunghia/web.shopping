@@ -10,32 +10,19 @@
 <body>
 
 	<div id="mainview">
-		<div id="content">
-			<form action="">
-				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
-				<input type="text"
-					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
-				<div style="color: red; float: right; text-align: right;">*</div>
-				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
-				<input type="text"
-					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
-				<div style="color: red; float: right; text-align: right;">*</div>
-				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
-				<input type="text"
-					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
-				<div style="color: red; float: right; text-align: right;">*</div>
-				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
-				<input type="text"
-					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
-				<div style="color: red; float: right; text-align: right;">*</div>
-				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
-				<input type="text"
-					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
-				<div style="color: red; float: right; text-align: right;">*</div>
-				<div style="text-align: left; margin: 10px 0px 0px 10px">label</div>
-				<input type="text"
-					style="margin: 0px 0px 10px 10px; border-radius: 5px" />
-				<div style="color: red; float: right; text-align: right;">*</div>
+		<div id="frm_login">
+			<form action="">				
+				<div class="label">Tên đăng nhập</div><input type="text" name="username" class="input" style="width: 300px;"/>
+				<div class="label">Email</div><input type="text" name="username" class="input" />
+				<div class="label">Ho va ten</div><input type="text" name="username" class="input"/>
+				<div class="label">mat khau</div><input type="password" name="username" class="input" />
+				<div class="label">xac nhan mat khau</div><input type="password" name="username"class="input" />
+				<div class="label">Ngay sinh</div><input type="text" name="username" class="input"/>
+				<div class="label">Gioi tinh</div><input type="text" name="username" class="input"/>
+				<div class="label">Dia chi</div><input type="text" name="username" class="input"/>
+				<div class="label">Thanh pho</div><input type="text" name="username" class="input"/>
+				<div style="width: 440px; clear: both; float: left;" ><input type= "submit" /></div>
+				
 			</form>
 		</div>
 	</div>

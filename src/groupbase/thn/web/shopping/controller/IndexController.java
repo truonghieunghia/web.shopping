@@ -1,14 +1,14 @@
 package groupbase.thn.web.shopping.controller;
 
-
-import groupbase.thn.web.shopping.common.ControllerCommon;
+import groupbase.thn.web.shopping.common.Controller;
+import groupbase.thn.web.shopping.model.IndexModel;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet(loadOnStartup = 1 ,urlPatterns = {"/index.html"})
+@WebServlet(urlPatterns = { "/index.html" })
 @MultipartConfig
-public class IndexController extends ControllerCommon{
+public class IndexController extends Controller<IndexModel> {
 
 	/**
 	 * 
@@ -17,30 +17,27 @@ public class IndexController extends ControllerCommon{
 
 	@Override
 	protected void doGet() {
-		
-		loadView("indexView");
-		
-		
+
+		Model.defaultView();
+
 	}
 
 	@Override
-	protected void doPost(){
+	protected void doPost() {
 		// TODO Auto-generated method stub
-//		upload("/upload", "file", "test");
-		/*MysqlConnect connect = new MysqlConnect();
-		AccountType obj = new AccountType();
-		obj.setAccountName("Admin");
-		obj.setAccountTypeID(1);
-		int result = -1;
-		connect.open();
-		ArrayList<ParameterSql> parameters = new ArrayList<ParameterSql>();
-		parameters.add(new ParameterSql(Integer.class, 1));
-//		result=connect.insert(AccountType.class, obj);
-		result=connect.delete(AccountType.class, AccountType.AccountTypeID_Field +"=?", parameters);
-		connect.close();
-		System.out.println("no connect"+result);*/
-		outString(outTextFromFile("/errorView.jsp"));
+		// upload("/upload", "file", "test");
+		/*
+		 * MysqlConnect connect = new MysqlConnect(); AccountType obj = new
+		 * AccountType(); obj.setAccountName("Admin"); obj.setAccountTypeID(1);
+		 * int result = -1; connect.open(); ArrayList<ParameterSql> parameters =
+		 * new ArrayList<ParameterSql>(); parameters.add(new
+		 * ParameterSql(Integer.class, 1)); //
+		 * result=connect.insert(AccountType.class, obj);
+		 * result=connect.delete(AccountType.class,
+		 * AccountType.AccountTypeID_Field +"=?", parameters); connect.close();
+		 * System.out.println("no connect"+result);
+		 */
+		// outString(outTextFromFile("/errorView.jsp"));
 	}
-	
 
 }

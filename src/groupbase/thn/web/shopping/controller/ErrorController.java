@@ -1,8 +1,10 @@
 package groupbase.thn.web.shopping.controller;
 import javax.servlet.annotation.WebServlet;
-import groupbase.thn.web.shopping.common.ControllerCommon;
+
+import groupbase.thn.web.shopping.common.Controller;
+import groupbase.thn.web.shopping.model.ErrorModel;
 @WebServlet(urlPatterns = {"/error.html"})
-public class ErrorController extends ControllerCommon{
+public class ErrorController extends Controller<ErrorModel>{
 
 	/**
 	 * 
@@ -12,7 +14,7 @@ public class ErrorController extends ControllerCommon{
 	@Override
 	protected void doGet(){
 		// TODO Auto-generated method stub
-		loadView("errorView");
+		Model.defaultView();
 	}
 
 	@Override

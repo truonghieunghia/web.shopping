@@ -22,63 +22,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-public abstract class ControllerCommon extends HttpServlet {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public abstract class Model {
 	private RequestDispatcher mDispatcher;
 	private String mPathView = "/";
 	protected HttpServletRequest mRequest;
 	protected HttpServletResponse mResponse;
 	protected PrintWriter mPrintWriter;
 	protected String mContentType = "text/plain; charset=utf-8";
+	private HttpServlet mHttpServlet;
 
-	public String getPathRoot() {
-		return mRequest.getServletContext().getRealPath("");
-	}
-
-	@Override
-	protected void doGet(HttpServletRequest request,
+	protected Model(HttpServlet httpServlet, HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
-		// TODO Auto-generated method stub
-		this.mRequest = request;
-		this.mResponse = response;
-		this.mResponse.setContentType(mContentType);
-		mPrintWriter = this.mResponse.getWriter();
-		doGet();
+		mHttpServlet = httpServlet;
+		mRequest = request;
+		mResponse = response;
+		mResponse.setContentType(mContentType);
+		mPrintWriter = mResponse.getWriter();
 	}
 
-	@Override
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws IOException {
-		// TODO Auto-generated method stub
-		this.mRequest = request;
-		this.mResponse = response;
-		this.mResponse.setContentType(mContentType);
-		mPrintWriter = this.mResponse.getWriter();
-		doPost();
-	}
-
-	private String getPath() {
-		ServletContext context = this.getServletContext();
-		if (context.getInitParameter("View") == null) {
-			return mPathView;
-		}
-		if (mPathView.length() == 1) {
-			return context.getInitParameter("View");
-		} else {
-			return mPathView;
-		}
-	}
-
-	protected void setPathView(String pathView) {
-		mPathView = pathView;
-	}
-
-	protected void loadView(String viewName) {
-		mDispatcher = getServletContext().getRequestDispatcher(
+	protected void viewResult(String viewName) {
+		mDispatcher = mHttpServlet.getServletContext().getRequestDispatcher(
 				getPath() + viewName + ".jsp");
 		try {
 			mDispatcher.forward(mRequest, mResponse);
@@ -232,29 +195,50 @@ public abstract class ControllerCommon extends HttpServlet {
 		return null;
 	}
 
-	public String outTextFromFile(String pathFile){
-		try {
-		      FileInputStream fis =
-		        new FileInputStream(getPathRoot()+pathFile);
-		      InputStreamReader isr = new InputStreamReader(fis);
-		      BufferedReader reader = new BufferedReader(isr);
-		      String line = null;
-		      String result ="";
-		      while ((line = reader.readLine()) != null) {
-		    	  result = result+line; 
-		      }
-		      reader.close();
-		      fis.close();
-		      isr.close();
-		      return result;
-		    }
-		    catch (Exception e) {
-		      e.printStackTrace();
-		      return "";
-		    }
-		
+	protected String getPathRoot() {
+		return mRequest.getServletContext().getRealPath("");
 	}
-	protected abstract void doGet();
 
-	protected abstract void doPost();
+	protected String outTextFromFile(String pathFile) {
+		try {
+			FileInputStream fis = new FileInputStream(getPathRoot() + pathFile);
+			InputStreamReader isr = new InputStreamReader(fis);
+			BufferedReader reader = new BufferedReader(isr);
+			String line = null;
+			String result = "";
+			while ((line = reader.readLine()) != null) {
+				result = result + line;
+			}
+			reader.close();
+			fis.close();
+			isr.close();
+			return result;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "";
+		}
+
+	}
+
+	protected void putData(String key, Object data) {
+		mRequest.setAttribute(key, data);
+	}
+
+	private String getPath() {
+		ServletContext context = mHttpServlet.getServletContext();
+		if (context.getInitParameter("View") == null) {
+			return mPathView;
+		}
+		if (mPathView.length() == 1) {
+			return context.getInitParameter("View");
+		} else {
+			return mPathView;
+		}
+	}
+
+	protected void setPathView(String pathView) {
+		mPathView = pathView;
+	}
+
+	public abstract void defaultView();
 }
