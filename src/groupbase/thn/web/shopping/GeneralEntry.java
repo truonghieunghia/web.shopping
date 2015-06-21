@@ -148,7 +148,7 @@ public class GeneralEntry {
 
 				}
 
-				/*for (Object obj : listcolumn) {
+				for (Object obj : listcolumn) {
 					@SuppressWarnings("unchecked")
 					HashMap<String, Object> columnDetail = (HashMap<String, Object>) obj;
 					String Field = columnDetail.get("Field").toString();
@@ -177,7 +177,7 @@ public class GeneralEntry {
 					writer.println("\t\t" + Field + " = " + setField + ";");
 					writer.println("\t}");
 					writer.println();
-				}*/
+				}
 				writer.println("}");
 				writer.close();
 			}

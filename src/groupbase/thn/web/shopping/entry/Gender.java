@@ -18,4 +18,20 @@ public class Gender implements Serializable {
 	@ColumnNameAnnotation(ColumnName = "GenderName", FieldType = String.class, MaxLength = 20)
 	public String GenderName;
 
+	public int getGenderID() {
+		return GenderID;
+	}
+
+	public void setGenderID(int genderID) {
+		GenderID = genderID;
+	}
+
+	public String getGenderName() {
+		return GenderName;
+	}
+
+	public void setGenderName(String genderName) {
+		GenderName = genderName;
+	}
+
 }

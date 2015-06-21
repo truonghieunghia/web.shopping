@@ -1,3 +1,4 @@
+<%@ include file="lib.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,6 +22,13 @@
 				<div class="label">Gioi tinh</div><input type="text" name="username" class="input"/>
 				<div class="label">Dia chi</div><input type="text" name="username" class="input"/>
 				<div class="label">Thanh pho</div><input type="text" name="username" class="input"/>
+				<select name="location" class="input">
+						<option value="9999" selected="selected">chosse location</option>
+					<c:forEach var ="location" items="${location_list}">
+						<option value="${location.locationID}">${location.locationName}</option>
+					</c:forEach>
+						<option value="999">Other</option>
+				</select>
 				<div style="width: 440px; clear: both; float: left;" ><input type= "submit" /></div>
 				
 			</form>

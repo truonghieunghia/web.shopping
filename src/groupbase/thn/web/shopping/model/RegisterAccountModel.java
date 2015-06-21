@@ -1,12 +1,16 @@
 package groupbase.thn.web.shopping.model;
 
+import groupbase.thn.web.shopping.common.ModelBase;
+import groupbase.thn.web.shopping.common.database.MysqlConnect;
+import groupbase.thn.web.shopping.entry.Location;
+
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import groupbase.thn.web.shopping.common.ModelBase;
 
 public class RegisterAccountModel extends ModelBase {
 
@@ -16,13 +20,15 @@ public class RegisterAccountModel extends ModelBase {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void test() {
-		System.out.println("Hello Model");
-	}
 
 	@Override
 	public void defaultView() {
 		// TODO Auto-generated method stub
+		MysqlConnect sql = new MysqlConnect();
+		sql.open();
+		List<Location> location = sql.executeQueryEntry(Location.class, null);
+		sql.close();
+		this.putData("location_list", location);
 		viewResult("registerAccountView");
 	}
 }

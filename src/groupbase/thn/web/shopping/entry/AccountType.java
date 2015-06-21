@@ -18,4 +18,20 @@ public class AccountType implements Serializable {
 	@ColumnNameAnnotation(ColumnName = "AccountName", FieldType = String.class, MaxLength = 100)
 	public String AccountName;
 
+	public int getAccountTypeID() {
+		return AccountTypeID;
+	}
+
+	public void setAccountTypeID(int accountTypeID) {
+		AccountTypeID = accountTypeID;
+	}
+
+	public String getAccountName() {
+		return AccountName;
+	}
+
+	public void setAccountName(String accountName) {
+		AccountName = accountName;
+	}
+
 }
