@@ -1,6 +1,6 @@
 package groupbase.thn.web.shopping.controller;
 
-import groupbase.thn.web.shopping.common.Controller;
+import groupbase.thn.web.shopping.common.ControllerBase;
 import groupbase.thn.web.shopping.model.IndexModel;
 
 import javax.servlet.annotation.MultipartConfig;
@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 
 @WebServlet(urlPatterns = { "/index.html" })
 @MultipartConfig
-public class IndexController extends Controller<IndexModel> {
+public class IndexController extends ControllerBase<IndexModel> {
 
 	/**
 	 * 

@@ -1,12 +1,12 @@
 package groupbase.thn.web.shopping.controller;
 
-import groupbase.thn.web.shopping.common.Controller;
+import groupbase.thn.web.shopping.common.ControllerBase;
 import groupbase.thn.web.shopping.model.TestModel;
 
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet(loadOnStartup = 1, urlPatterns = { "/test.html" })
-public class Test extends Controller<TestModel> {
+public class Test extends ControllerBase<TestModel> {
 
 	/**
 	 * 

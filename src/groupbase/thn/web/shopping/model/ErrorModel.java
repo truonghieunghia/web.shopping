@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import groupbase.thn.web.shopping.common.Model;
+import groupbase.thn.web.shopping.common.ModelBase;
 
-public class ErrorModel extends Model{
+public class ErrorModel extends ModelBase{
 
 	public ErrorModel(HttpServlet httpServlet, HttpServletRequest request,
 			HttpServletResponse response) throws IOException {

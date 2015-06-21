@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-public abstract class Model {
+public abstract class ModelBase {
 	private RequestDispatcher mDispatcher;
 	private String mPathView = "/";
 	protected HttpServletRequest mRequest;
@@ -31,7 +31,7 @@ public abstract class Model {
 	protected String mContentType = "text/plain; charset=utf-8";
 	private HttpServlet mHttpServlet;
 
-	protected Model(HttpServlet httpServlet, HttpServletRequest request,
+	protected ModelBase(HttpServlet httpServlet, HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
 		mHttpServlet = httpServlet;
 		mRequest = request;

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public abstract class Controller<M extends Model> extends HttpServlet {
+public abstract class ControllerBase<M extends ModelBase> extends HttpServlet {
 
 	/**
 	 * 

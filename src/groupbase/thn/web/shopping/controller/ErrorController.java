@@ -1,10 +1,10 @@
 package groupbase.thn.web.shopping.controller;
 import javax.servlet.annotation.WebServlet;
 
-import groupbase.thn.web.shopping.common.Controller;
+import groupbase.thn.web.shopping.common.ControllerBase;
 import groupbase.thn.web.shopping.model.ErrorModel;
 @WebServlet(urlPatterns = {"/error.html"})
-public class ErrorController extends Controller<ErrorModel>{
+public class ErrorController extends ControllerBase<ErrorModel>{
 
 	/**
 	 * 
