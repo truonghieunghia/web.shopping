@@ -38,6 +38,7 @@ public abstract class ModelBase {
 		mResponse = response;
 		mResponse.setContentType(mContentType);
 		mPrintWriter = mResponse.getWriter();
+
 	}
 
 	protected void viewResult(String viewName) {
@@ -161,19 +162,20 @@ public abstract class ModelBase {
 		mPrintWriter.println(text);
 	}
 
-	private <T> T  paserStringToType(String str,Class<T> clazz){
+	private <T> T paserStringToType(String str, Class<T> clazz) {
 		Object value = null;
-		if(clazz.equals(String.class)){
+		if (clazz.equals(String.class)) {
 			value = str;
 		}
-		if(clazz.equals(Integer.class)){
+		if (clazz.equals(Integer.class)) {
 			value = Integer.parseInt(str);
 		}
-		if(clazz.equals(Float.class)){
+		if (clazz.equals(Float.class)) {
 			value = Float.parseFloat(str);
 		}
 		return clazz.cast(value);
 	}
+
 	protected <T> T getDataPost(Class<T> formData) {
 		try {
 			List<Field> fields = new ArrayList<Field>();
@@ -187,27 +189,31 @@ public abstract class ModelBase {
 				if (formAnnotation != null) {
 					String[] value = mRequest.getParameterValues(formAnnotation
 							.Name());
-					
+
 					if (value != null) {
 						if (value.length == 1) {
 							if (value[0].trim().length() == 0) {
 								field.set(result, null);
 							} else {
-								field.set(result, paserStringToType(value[0],formAnnotation.FieldType()));
+								field.set(
+										result,
+										paserStringToType(value[0],
+												formAnnotation.FieldType()));
 							}
 						} else {
 							field.set(result, value);
 						}
 					}
-				} else {
-					field.set(result, null);
 				}
 			}
 			return formData.cast(result);
 		} catch (Exception e) {
+			e.printStackTrace();
 			return null;
 		}
 	}
+
+
 
 	protected <T> T getQueryStringObject(Class<T> object) {
 		return null;

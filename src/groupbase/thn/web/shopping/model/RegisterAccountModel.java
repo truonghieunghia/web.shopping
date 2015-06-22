@@ -31,6 +31,10 @@ public class RegisterAccountModel extends ModelBase {
 		sql.close();
 		this.putData("gender_list", genders);
 		this.putData("location_list", location);
+		FormRegisterAccount form = new FormRegisterAccount();
+		form.setUsername("Truong Hieu Nghia");
+		this.putData("formdata", form);
+		
 		viewResult("registerAccountView");
 	}
 	public void addUser(){
@@ -45,5 +49,6 @@ public class RegisterAccountModel extends ModelBase {
 			this.putData("location_list", location);
 			viewResult("registerAccountView");
 		}
+
 	}
 }

@@ -13,7 +13,7 @@
 	<div id="mainview">
 		<div id="frm_login">
 			<form action="/register.html" method="post">				
-				<div class="label">Tên đăng nhập</div><input type="text" name="username" class="input" style="width: 300px;"/>
+				<div class="label">Tên đăng nhập</div><input type="text" name="username" value="${formdata.username}" class="input" style="width: 300px;"/>
 				<div class="label">Email</div><input type="text" name="email" class="input" />
 				<div class="label">Ho va ten</div><input type="text" name="fullname" class="input"/>
 				<div class="label">mat khau</div><input type="password" name="password" class="input" />
@@ -35,8 +35,7 @@
 					</c:forEach>
 						<option value="999">Other</option>
 				</select>
-				<div style="width: 440px; clear: both; float: left;" ><input type= "submit" /></div>
-				
+				<div style="width: 440px; clear: both; float: left;" ><input type= "submit" /></div>				
 			</form>
 		</div>
 	</div>
