@@ -12,16 +12,22 @@
 
 	<div id="mainview">
 		<div id="frm_login">
-			<form action="">				
+			<form action="/register.html" method="post">				
 				<div class="label">Tên đăng nhập</div><input type="text" name="username" class="input" style="width: 300px;"/>
-				<div class="label">Email</div><input type="text" name="username" class="input" />
-				<div class="label">Ho va ten</div><input type="text" name="username" class="input"/>
-				<div class="label">mat khau</div><input type="password" name="username" class="input" />
-				<div class="label">xac nhan mat khau</div><input type="password" name="username"class="input" />
-				<div class="label">Ngay sinh</div><input type="text" name="username" class="input"/>
-				<div class="label">Gioi tinh</div><input type="text" name="username" class="input"/>
-				<div class="label">Dia chi</div><input type="text" name="username" class="input"/>
-				<div class="label">Thanh pho</div><input type="text" name="username" class="input"/>
+				<div class="label">Email</div><input type="text" name="email" class="input" />
+				<div class="label">Ho va ten</div><input type="text" name="fullname" class="input"/>
+				<div class="label">mat khau</div><input type="password" name="password" class="input" />
+				<div class="label">xac nhan mat khau</div><input type="password" name="repassword"class="input" />
+				<div class="label">Ngay sinh</div><input type="text" name="birthday" class="input"/>
+				<div class="label">Gioi tinh</div>
+				<select name="gender" class="input">
+						<option value="9999" selected="selected">chosse gender</option>
+					<c:forEach var ="gender" items="${gender_list}">
+						<option value="${gender.genderID}">${gender.genderName}</option>
+					</c:forEach>						
+				</select>
+				<div class="label">Dia chi</div><input type="text" name="address" class="input"/>
+				<div class="label">Thanh pho</div>
 				<select name="location" class="input">
 						<option value="9999" selected="selected">chosse location</option>
 					<c:forEach var ="location" items="${location_list}">

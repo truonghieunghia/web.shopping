@@ -4,6 +4,7 @@ import groupbase.thn.web.shopping.common.ControllerBase;
 import groupbase.thn.web.shopping.model.RegisterAccountModel;
 
 import javax.servlet.annotation.WebServlet;
+
 @WebServlet(urlPatterns = {"/register.html","/Register.html"})
 public class RegisterAccountController extends ControllerBase<RegisterAccountModel>{
 
@@ -22,7 +23,7 @@ public class RegisterAccountController extends ControllerBase<RegisterAccountMod
 	@Override
 	protected void doPost() {
 		// TODO Auto-generated method stub
-		
+		Model.addUser();
 	}
 
 }

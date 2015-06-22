@@ -54,8 +54,13 @@ public abstract class ModelBase {
 		}
 	}
 
-	protected void Redirect(String url) throws ServletException, IOException {
-		this.mResponse.sendRedirect(url);
+	protected void Redirect(String url) {
+		try {
+			this.mResponse.sendRedirect(url);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	protected String getFileName(final Part part) {
@@ -156,6 +161,19 @@ public abstract class ModelBase {
 		mPrintWriter.println(text);
 	}
 
+	private <T> T  paserStringToType(String str,Class<T> clazz){
+		Object value = null;
+		if(clazz.equals(String.class)){
+			value = str;
+		}
+		if(clazz.equals(Integer.class)){
+			value = Integer.parseInt(str);
+		}
+		if(clazz.equals(Float.class)){
+			value = Float.parseFloat(str);
+		}
+		return clazz.cast(value);
+	}
 	protected <T> T getDataPost(Class<T> formData) {
 		try {
 			List<Field> fields = new ArrayList<Field>();
@@ -169,13 +187,13 @@ public abstract class ModelBase {
 				if (formAnnotation != null) {
 					String[] value = mRequest.getParameterValues(formAnnotation
 							.Name());
+					
 					if (value != null) {
 						if (value.length == 1) {
-							if (value[0].length() == 0) {
+							if (value[0].trim().length() == 0) {
 								field.set(result, null);
 							} else {
-								field.set(result, formAnnotation.FieldType()
-										.cast(value[0]));
+								field.set(result, paserStringToType(value[0],formAnnotation.FieldType()));
 							}
 						} else {
 							field.set(result, value);
